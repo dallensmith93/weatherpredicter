@@ -7,7 +7,7 @@ function WeatherApp() {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState('');
 
-  const apiKey = 'f079dcb17e87958f246cd5604fa53c69'; // Replace with your weather API key
+  const apiKey = 'f079dcb17e87958f246cd5604fa53c69'; // api key
 
   const getWeather = async () => {
     if (city.trim() === '') {
@@ -19,7 +19,7 @@ function WeatherApp() {
 
     try {
       const response = await fetch(
-        `https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city},us&appid=${apiKey}&units=metric`
       );
 
       if (!response.ok) {
